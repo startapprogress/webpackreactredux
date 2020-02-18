@@ -1,0 +1,46 @@
+
+.img{
+margin-left: 1000px;
+}
+.search{
+margin-left: 430px;
+    margin-top: -25px;
+}
+.width{
+    width: 40px;
+    height: 40px;
+}
+.Enter{
+ margin-left: 250px;
+    margin-top: 70px;
+}
+.One{
+margin-left: 250px;
+    margin-top: 100px;
+}
+.GitHub{
+   margin-left: 250px;
+    margin-top: -30px;
+
+}
+.input {
+    margin-left: 250px;
+    margin-top: 15px;
+}
+.month{
+width: 30px;
+    height: 30px;
+}
+@media (max-width: 700px) {
+    .One{
+        margin-right: 120px;
+    }
+
+}
+@media (min-width: 300px) {
+    .One{
+        margin-right:120px ;
+    }
+
+
+}
