@@ -3,6 +3,7 @@ import "./Header.css"
 import Axios from "axios";
 import {useHistory} from "react-router";
 import Sun from "./Sun";
+import {styled} from 'linaria/react'
 
 export default function Header ({props}) {
     const history=useHistory()
@@ -34,16 +35,19 @@ return(
     <div>
         <div onClick={()=>{
            history.push("sun")
-        }} className="img">
+        }}
+
+             className="img">
+            <input type="checkbox" className="toggle"/>
             <img className="width" src={require("../assets/img/moon-outline.png")} alt=""/>
         </div>
         <div className="GitHub">
-            <p>
+            <p >
                 GitHub Profiles
             </p>
         </div>
         <div className="Enter">
-            <p>   Enter a GitHub username<br/> to see the magic</p>
+            <p >   Enter a GitHub username<br/> to see the magic</p >
         </div>
         <div className="One">
         <label>
@@ -52,16 +56,8 @@ return(
         </div>
             <div className="input">
             <input type="text"/>
-
-
-            </div>
-        <div
-            onClick={Search}
-
-            className="search">
-            { state.posts.map(person => <li>{person.message}</li>)}
-            <img className="month" src={require("./../assets/img/search-outline.png")}/>
-        </div>
+                    <img className="month" src={require("./../assets/img/search-outline.png")}/>
+                </div>
     </div>
 )
 }
