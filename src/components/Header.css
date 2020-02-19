@@ -31,16 +31,30 @@ margin-left: 250px;
 width: 30px;
     height: 30px;
 }
-@media (max-width: 700px) {
-    .One{
-        margin-right: 120px;
+@media (max-width: 700px){
+    .img{
+        margin-left: 400px;
     }
-
+    .GitHub{
+        margin-left: 100px;
+    }
+    .Enter{
+        margin-left: 100px;
+    }
+    .One{
+        margin-left: 100px;
+    }
+    .input{
+        margin-left: 100px;
+    }
+    .search{
+        margin-left: 280px;
+    }
 }
 @media (min-width: 300px) {
-    .One{
-        margin-right:120px ;
+    .search{
+        margin-left: 420px;
     }
-
-
 }
+
+
