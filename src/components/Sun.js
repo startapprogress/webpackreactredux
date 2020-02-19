@@ -1,11 +1,14 @@
 import React, { useState} from 'react'
 import Axios from "axios";
 import Post from "./Post";
+import {useHistory} from "react-router";
+
 function Sun({props}){
 const [state,setState]=useState({
     click:false,
     posts:[]
 })
+    const history=useHistory();
     const Search=()=>{
         Axios.get("https://api.github.com/users/:id",{
             method:"GET",
@@ -37,11 +40,11 @@ const [state,setState]=useState({
         />
     })
     return(
-        <div>
+        <div className="Frag">
             <div onClick={()=>{
-                props.history(`header`)
+                history.push("header")
             }} className="img">
-                <img className="width" src={require("../assets/img/sun-outline.png.png")} alt=""/>
+                <img className="width" src={require("../assets/img/sun-outline.png")} alt=""/>
             </div>
             <div className="GitHub">
                 <p>

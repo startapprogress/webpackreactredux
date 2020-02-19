@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import "./Header.css"
 import Axios from "axios";
-
+import {useHistory} from "react-router";
 import Sun from "./Sun";
 export default function Header ({props}) {
+    const history=useHistory()
     const [state,setState]=useState({
         click:false,
         posts:[]
@@ -38,7 +39,7 @@ export default function Header ({props}) {
 return(
     <div>
         <div onClick={()=>{
-            props.history("sun")
+           history.push("sun")
         }} className="img">
             <img className="width" src={require("../assets/img/moon-outline.png")} alt=""/>
         </div>
