@@ -37,12 +37,15 @@ const [state,setState]=useState({
         />
     })
     return(
-        <div className="Frag" onClick={props.click}>
-            <div className="img">
+        <div>
+            <div onClick={()=>{
+                props.history(`header`)
+            }} className="img">
+                <img className="width" src={require("../assets/img/sun-outline.png.png")} alt=""/>
             </div>
             <div className="GitHub">
                 <p>
-                    GitHub Profiler
+                    GitHub Profiles
                 </p>
             </div>
             <div className="Enter">
@@ -53,14 +56,16 @@ const [state,setState]=useState({
                     GitHub Username
                 </label>
             </div>
-            <div onClick={Search} className="input">
-                <input
+            <div className="input">
+                <input type="text"/>
 
-                    className="inputStyle"
-                    type="text"/>
-                {
-                    posts
-                }
+
+            </div>
+            <div
+                onClick={Search}
+                className="search">
+
+                <img className="month" src={require("./../assets/img/search-outline.png")}/>
             </div>
         </div>
     )
