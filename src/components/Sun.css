@@ -20,7 +20,9 @@ background-color: white;
 .Frag{
     background-color: black;
     width: 1500px;
-    height: 800px;
+    height: 1000px;
+    overflow: hidden;
+    overflow-x: hidden;
 }
 .One{
     margin-left: 250px;
@@ -92,6 +94,10 @@ background-color: white;
     }
     .search{
         margin-left: 280px;
+    }
+    .Frag{
+        width: 480px;
+        height: 700px;
     }
 }
 
