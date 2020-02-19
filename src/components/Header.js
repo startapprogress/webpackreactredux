@@ -3,21 +3,12 @@ import "./Header.css"
 import Axios from "axios";
 
 import Sun from "./Sun";
-export default function Header () {
+export default function Header ({props}) {
     const [state,setState]=useState({
         click:false,
         posts:[]
     })
-    const Change=()=>{
-        setState({
-            state:state.click
 
-        })
-        let click;
-        if(state.click){
-            click=<Sun/>
-        }
-    }
     const Search=()=>{
         Axios.get("https://api.github.com/users/:id",{
             method:"GET",
@@ -46,7 +37,9 @@ export default function Header () {
 
 return(
     <div>
-        <div onClick={Change} className="img">
+        <div onClick={()=>{
+            props.history("sun")
+        }} className="img">
             <img className="width" src={require("../assets/img/moon-outline.png")} alt=""/>
         </div>
         <div className="GitHub">
