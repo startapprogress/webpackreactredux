@@ -3,8 +3,8 @@
 margin-left: 1000px;
 }
 .width{
-    width: 40px;
-    height: 40px;
+    width:10px;
+    height: 10px;
 }
 .Enter{
  margin-left: 250px;
@@ -20,13 +20,16 @@ margin-left: 250px;
 }
 .input {
  display: flex;
+    justify-content: center;
+    margin-right:680px;
+    margin-top: 20px;
 }
 .month{
 width: 30px;
     height: 30px;
 margin-left: 10px;
 }
-.month:active{
+.month:hover{
     border: 16px solid white;
     border-radius: 50%;
     margin-top: -10px;
@@ -58,7 +61,7 @@ margin-left: 10px;
         margin-left: 100px;
     }
     .input{
-        margin-left: 100px;
+        margin-left: 200px;
     }
 }
 

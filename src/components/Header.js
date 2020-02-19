@@ -1,30 +1,29 @@
 import React,{useState} from 'react'
 import "./Header.css"
 import Axios from "axios";
-import Switch from 'react-switch'
+
 import styled from "styled-components/dist/styled-components.browser.esm";
 export default function Header ({props}) {
     const [state,setState]=useState({
-       
         posts:[],
-        div:[],
-        checked:false
+        div:false,
+        click:false
     })
-    const Checked=()=>{
-setState({
-    state:!state.checked
-})
-    }
+
 const Change=()=>{
+        state.click=(<img src={require("./../assets/img/moon.png")}/>)
+    setState({
+        state:!state.click
+    })
  state.div=  styled.div`
-  
   background: white;
   &:hover {
     background: black;
   }
-  
-
 `;
+    setState({
+        state:!state.div
+    })
 }
     const Search=()=>{
         Axios.get("https://api.github.com/users/:id",{
@@ -50,10 +49,11 @@ const Change=()=>{
 return(
     <div>
         <div
+            onClick={Change}
              className="img">
 
-            <img className="width" src={require("../assets/img/moon-outline.png")} alt=""/>
-            <Switch onChange={Checked} checked={state.checked}/>
+            <img className="width" src={require("../assets/img/moon.png")} alt=""/>
+
         </div>
         <div className="GitHub">
             <p >
@@ -70,7 +70,7 @@ return(
         </div>
             <div  className="input">
             <input type="text"/>
-                    <img onClick={Search} className="month" src={require("./../assets/img/search-outline.png")}/>
+                    <img onClick={Search} className="month" src={require("./../assets/img/search.png")}/>
                 </div>
     </div>
 )
