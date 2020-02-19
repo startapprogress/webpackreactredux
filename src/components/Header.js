@@ -22,15 +22,8 @@ export default function Header ({props}) {
            mode:"cors",
             body:JSON.stringify({message:"با موفقیت انجام شد"})
         }).then(response=>{
-            const posts=response.data.slice(0,3)
-            const updatePosts=posts.Map(post=>{
-                return{
-                    ...post
-                }
-            })
-            setState({
-                posts:updatePosts
-            })
+           const person=response.data
+          setState(state.posts)
         }).catch(err=>console.log(err)).finally({
             message:"پیام با موفقیت گرفته شد"
         })
@@ -64,8 +57,9 @@ return(
             </div>
         <div
             onClick={Search}
-            className="search">
 
+            className="search">
+            { state.posts.map(person => <li>{person.message}</li>)}
             <img className="month" src={require("./../assets/img/search-outline.png")}/>
         </div>
     </div>

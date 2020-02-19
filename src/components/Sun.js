@@ -21,15 +21,8 @@ const [state,setState]=useState({
             mode:"cors",
             body:JSON.stringify({message:"با موفقیت انجام شد"})
         }).then(response=>{
-            const posts=response.data.slice(0,1)
-            const updatePosts=posts.Map(post=>{
-                return{
-                    ...post
-                }
-            })
-            setState({
-                posts:updatePosts
-            })
+            const person=response.data
+            setState(state.posts)
         }).catch(err=>console.log(err)).finally({
             message:"پیام با موفقیت گرفته شد"
         })
@@ -66,6 +59,7 @@ const [state,setState]=useState({
             <div
                 onClick={Search}
                 className="search">
+                { state.posts.map(person => <li>{person.message}</li>)}
 
                 <img className="month" src={require("./../assets/img/search-outline.png")}/>
             </div>
