@@ -3,6 +3,7 @@ import "./Header.css"
 import Axios from "axios";
 import {useHistory} from "react-router";
 import Sun from "./Sun";
+
 export default function Header ({props}) {
     const history=useHistory()
     const [state,setState]=useState({
@@ -65,7 +66,7 @@ return(
             onClick={Search}
             className="search">
 
-<img className="month" src={require("./../assets/img/search-outline.png")}/>
+            <img className="month" src={require("./../assets/img/search-outline.png")}/>
         </div>
     </div>
 )

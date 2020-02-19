@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import Axios from "axios";
 import Post from "./Post";
+import "./Sun.css"
 import {useHistory} from "react-router";
 
 function Sun({props}){
@@ -20,7 +21,7 @@ const [state,setState]=useState({
             mode:"cors",
             body:JSON.stringify({message:"با موفقیت انجام شد"})
         }).then(response=>{
-            const posts=response.data.slice(0,3)
+            const posts=response.data.slice(0,1)
             const updatePosts=posts.Map(post=>{
                 return{
                     ...post
@@ -34,28 +35,26 @@ const [state,setState]=useState({
         })
 
     }
-    const posts=state.posts.map(post=>{
-        return<Post
-            message={post.message}
-        />
-    })
+
     return(
-        <div className="Frag">
+        <div
+
+     className="Frag">
             <div onClick={()=>{
                 history.push("header")
             }} className="img">
                 <img className="width" src={require("../assets/img/sun-outline.png")} alt=""/>
             </div>
             <div className="GitHub">
-                <p>
+                <p className="GitHubStyle">
                     GitHub Profiles
                 </p>
             </div>
             <div className="Enter">
-                <p>   Enter a GitHub username<br/> to see the magic</p>
+                <p className="EnterStyle">   Enter a GitHub username<br/> to see the magic</p>
             </div>
             <div className="One">
-                <label>
+                <label className="oneStyle">
                     GitHub Username
                 </label>
             </div>

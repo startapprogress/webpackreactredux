@@ -5,6 +5,8 @@ margin-left: 1000px;
 .search{
 margin-left: 430px;
     margin-top: -25px;
+
+
 }
 .width{
     width: 40px;
@@ -24,12 +26,14 @@ margin-left: 250px;
 
 }
 .input {
-    margin-left: 230px;
+    margin-left: 300px;
     margin-top: 15px;
 }
 .month{
 width: 30px;
     height: 30px;
+
+
 
 }
 .month:hover{
