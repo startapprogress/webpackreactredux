@@ -1,17 +1,31 @@
 import React,{useState} from 'react'
 import "./Header.css"
 import Axios from "axios";
-import {useHistory} from "react-router";
-import Sun from "./Sun";
-import {styled} from 'linaria/react'
-
+import Switch from 'react-switch'
+import styled from "styled-components/dist/styled-components.browser.esm";
 export default function Header ({props}) {
-    const history=useHistory()
     const [state,setState]=useState({
-        click:false,
-        posts:[]
+       
+        posts:[],
+        div:[],
+        checked:false
     })
+    const Checked=()=>{
+setState({
+    state:!state.checked
+})
+    }
+const Change=()=>{
+ state.div=  styled.div`
+  
+  background: white;
+  &:hover {
+    background: black;
+  }
+  
 
+`;
+}
     const Search=()=>{
         Axios.get("https://api.github.com/users/:id",{
             method:"GET",
@@ -22,24 +36,24 @@ export default function Header ({props}) {
             },
            mode:"cors",
             body:JSON.stringify({message:"با موفقیت انجام شد"})
-        }).then(response=>{
-           const person=response.data
-          setState(state.posts)
-        }).catch(err=>console.log(err)).finally({
-            message:"پیام با موفقیت گرفته شد"
+        }).then(function (response) {
+       const updatePosts=state.posts.data;
+       setState({
+           updatePosts:state.posts
+       })
         })
 
+        .catch(err=>console.log(err)).finally({
+            message:"پیام با موفقیت گرفته شد"
+        })
     }
-
 return(
     <div>
-        <div onClick={()=>{
-           history.push("sun")
-        }}
-
+        <div
              className="img">
-            <input type="checkbox" className="toggle"/>
+
             <img className="width" src={require("../assets/img/moon-outline.png")} alt=""/>
+            <Switch onChange={Checked} checked={state.checked}/>
         </div>
         <div className="GitHub">
             <p >
@@ -54,9 +68,9 @@ return(
             GitHub Username
         </label>
         </div>
-            <div className="input">
+            <div  className="input">
             <input type="text"/>
-                    <img className="month" src={require("./../assets/img/search-outline.png")}/>
+                    <img onClick={Search} className="month" src={require("./../assets/img/search-outline.png")}/>
                 </div>
     </div>
 )
