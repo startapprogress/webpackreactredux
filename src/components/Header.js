@@ -70,8 +70,10 @@ return(
         </div>
             <div  className="input">
             <input type="text"/>
-                    <img onClick={Search} className="month" src={require("./../assets/img/search.png")}/>
-                </div>
+                <img onClick={Search} className="month" src={require("./../assets/img/search.png")}/>
+
+            </div>
+
     </div>
 )
 }
