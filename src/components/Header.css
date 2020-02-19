@@ -24,7 +24,7 @@ margin-left: 250px;
 
 }
 .input {
-    margin-left: 250px;
+    margin-left: 230px;
     margin-top: 15px;
 }
 .month{
@@ -51,10 +51,6 @@ width: 30px;
         margin-left: 280px;
     }
 }
-@media (min-width: 300px) {
-    .search{
-        margin-left: 420px;
-    }
-}
+
 
 
