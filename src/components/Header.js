@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import "./Header.css"
 import Axios from "axios";
-
 import styled from "styled-components/dist/styled-components.browser.esm";
 export default function Header ({props}) {
     const [state,setState]=useState({
@@ -9,9 +8,8 @@ export default function Header ({props}) {
         div:false,
         click:false
     })
-
 const Change=()=>{
-        state.click=(<img src={require("./../assets/img/moon.png")}/>)
+        state.click=(<img alt="moon" src={require("./../assets/img/moon.png")}/>)
     setState({
         state:!state.click
     })
@@ -40,7 +38,6 @@ const Change=()=>{
            updatePosts:state.posts
        })
         })
-
         .catch(err=>console.log(err)).finally({
             message:"پیام با موفقیت گرفته شد"
         })
@@ -50,8 +47,7 @@ return(
         <div
             onClick={Change}
              className="img">
-            <img className="width" src={require("../assets/img/moon.png")} alt=""/>
-
+            <img className="width" src={require("../assets/img/moon.png")} alt="moon"/>
         </div>
         <div className="GitHub">
             <p >
@@ -69,7 +65,7 @@ return(
             <div  className="input">
             <input type="text"/>
                 <img onClick={Search} className="month"
-                     src={require("./../assets/img/search.png")}/>
+                   alt="search"  src={require("./../assets/img/search.png")}/>
             </div>
     </div>
 )
