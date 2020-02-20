@@ -31,7 +31,6 @@ const Change=()=>{
             header:{
                'contentBase':"application/json",
                 'accept':"application/json"
-
             },
            mode:"cors",
             body:JSON.stringify({message:"با موفقیت انجام شد"})
@@ -51,7 +50,6 @@ return(
         <div
             onClick={Change}
              className="img">
-
             <img className="width" src={require("../assets/img/moon.png")} alt=""/>
 
         </div>
@@ -70,10 +68,9 @@ return(
         </div>
             <div  className="input">
             <input type="text"/>
-                <img onClick={Search} className="month" src={require("./../assets/img/search.png")}/>
-
+                <img onClick={Search} className="month"
+                     src={require("./../assets/img/search.png")}/>
             </div>
-
     </div>
 )
 }
