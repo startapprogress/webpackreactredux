@@ -33,7 +33,7 @@ const Change=()=>{
             },
            mode:"cors",
             body:JSON.stringify({message:"با موفقیت انجام شد"})
-        }).then(function (response) {
+        }).then(function(response) {
        const posts=state.posts.data.slice(0,1);
 const updatePosts=posts.map((post)=>{
     return{
@@ -77,11 +77,8 @@ return(
         </label>
         </div>
             <div  className="input">
-            <input value={()=>{
-                setState({
-                    posts:!state.posts
-                })
-            }}
+            <input
+
 
                    type="text"/>
                 {
