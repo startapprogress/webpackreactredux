@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import "./Header.css"
 import Axios from "axios";
 import styled from "styled-components/dist/styled-components.browser.esm";
+import Post from "./Post";
 export default function Header ({props}) {
     const [state,setState]=useState({
         posts:[],
@@ -33,15 +34,28 @@ const Change=()=>{
            mode:"cors",
             body:JSON.stringify({message:"با موفقیت انجام شد"})
         }).then(function (response) {
-       const updatePosts=state.posts.data;
+       const posts=state.posts.data.slice(0,1);
+const updatePosts=posts.map((post)=>{
+    return{
+        ...post,
+        message:""
+    }
+})
        setState({
-           updatePosts:state.posts
+           posts:updatePosts
        })
+            console.log(response)
         })
         .catch(err=>console.log(err)).finally({
             message:"پیام با موفقیت گرفته شد"
         })
+
     }
+    const posts=state.posts.map((post)=>(
+        <Post
+            message={post.message}
+        />
+    ))
 return(
     <div>
         <div
@@ -63,9 +77,21 @@ return(
         </label>
         </div>
             <div  className="input">
-            <input type="text"/>
-                <img onClick={Search} className="month"
+            <input value={()=>{
+                setState({
+                    posts:!state.posts
+                })
+            }}
+
+                   type="text"/>
+                {
+                    posts
+                }
+                <img
+
+                    onClick={Search} className="month"
                    alt="search"  src={require("./../assets/img/search.png")}/>
+
             </div>
     </div>
 )
